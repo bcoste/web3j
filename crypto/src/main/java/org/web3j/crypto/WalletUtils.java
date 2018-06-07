@@ -153,6 +153,14 @@ public class WalletUtils {
         return String.format("%s%skeystore", getDefaultKeyDirectory(), File.separator);
     }
 
+    /**
+     * Get keystore destination directory for a Rinkeby network
+     * @return
+     */
+    private String getRinkebyKeyDirectory() {
+        return String.format("%s%srinkeby%skeystore", WalletUtils.getDefaultKeyDirectory(), File.separator, File.separator);
+    }
+    
     public static boolean isValidPrivateKey(String privateKey) {
         String cleanPrivateKey = Numeric.cleanHexPrefix(privateKey);
         return cleanPrivateKey.length() == PRIVATE_KEY_LENGTH_IN_HEX;
